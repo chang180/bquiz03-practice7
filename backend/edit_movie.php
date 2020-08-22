@@ -18,6 +18,7 @@
 預告影片：<input type="file" name="trailer"><br>
 電影海報：<input type="file" name="poster"><br>
 電影排序：<input type="number" name="rank"  value="<?=$row['rank'];?>"><br>
+是否顯示：(1:顯示2:不顯示)<input type="number" name="sh"  value="<?=$row['sh'];?>"><br>
 劇情簡介：<textarea name="intro" style="width:500px;height:200px"><?=$row['intro'];?></textarea><br>
 <input type="hidden" name="id" value="<?=$_GET['id'];?>">
 <div class="ct"><button>修改</button><button type="reset">重置</button></div>
