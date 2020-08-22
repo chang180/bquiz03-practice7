@@ -4,7 +4,7 @@
     <video src="img/<?=$m['trailer'];?>" width="300px" height="250px" controls="" style="float:right;"></video>
     <font style="font-size:24px"> <img src="img/<?=$m['poster'];?>" width="200px" height="250px" style="margin:10px; float:left">
       <p style="margin:3px">影片名稱 ：<?=$m['name'];?>
-        <input type="button" value="線上訂票" onclick="lof('?do=ord&amp;id=4')" style="margin-left:50px; padding:2px 4px" class="b2_btu">
+        <input type="button" value="線上訂票" onclick="location.href='?do=order&id=<?=$m['id'];?>'" style="margin-left:50px; padding:2px 4px" class="b2_btu">
       </p>
       <p style="margin:3px">影片分級 ： <img src="icon/<?=$m['level'];?>.png" style="display:inline-block;"><?=$level[$m['level']];?> </p>
       <p style="margin:3px">影片片長 ：<?=$m['length'];?></p>
