@@ -69,7 +69,14 @@
                     seat.splice(seat.indexOf(this.value), "1");
                 }
                 $("#mTicket").text(ticket);
-                $("#send").on("click", function() {
+                
+            })
+
+        })
+    }
+
+    $("#send").on("click", function() {
+                    // console.log(seat);
                     $.post("api/order.php", {
                         name,
                         session,
@@ -79,10 +86,6 @@
                         location.href = `?do=result&no=${no}`;
                     })
                 })
-            })
-
-        })
-    }
 
     function prev() {
         $("#order-form,#seat-form").toggle();

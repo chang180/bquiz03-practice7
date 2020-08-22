@@ -27,12 +27,14 @@
     <div class="rb tab" style="width:95%;">
     <div style="display:flex;flex-wrap:wrap;">
     <?php
-    $total=$Movie->count(['sh'=>1]);
+    $today=date("Y-m-d");
+    $ondate=date("Y-m-d",strtotime("-2 days"));
+    $total=$Movie->count(['sh'=>1]," && date >= '$ondate' && date <= '$today'");
     $div=4;
     $pages=ceil($total/$div);
     $now=$_GET['p']??"1";
     $start=($now-1)*$div;
-$movies=$Movie->all(['sh'=>1]," ORDER BY rank DESC LIMIT $start,$div");
+    $movies=$Movie->all(['sh'=>1]," && date >= '$ondate' && date <= '$today' ORDER BY rank DESC LIMIT $start,$div");
 foreach($movies as $m){
     ?>
     <div style="width:48%;border:1px solid black">
